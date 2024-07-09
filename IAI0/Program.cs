@@ -1,4 +1,4 @@
-﻿//NOT_MIT_KAN v.0
+//NOT_MIT_KAN v.0
 //Concept: Andrew Polar and Mike Poluektov
 //Developer Andrew Polar
 
@@ -152,10 +152,10 @@ namespace NOT_MIT_KAN_0
             Basis outer = new Basis(16);
             double muInner = 0.2;
             double muOuter = 0.1;
-            int Epochs = 300;
+            int Epochs = 400;
             int marginStart = 60;
             int marginEnd = 60;
-            double sensitivity = 0.01;
+            double sensitivity = 0.0;
             //end setting part
 
             Model[] m = new Model[TH];
@@ -210,7 +210,7 @@ namespace NOT_MIT_KAN_0
                         //addend.UpdateUsingInput(inputs[i], diff);
                     }
                     error2 += diff * diff;
-                    residualError[i] = diff;
+                    residualError[i] = Math.Abs(diff);
                     ++cnt;
                 }
                 error2 /= cnt;
@@ -247,5 +247,3 @@ namespace NOT_MIT_KAN_0
         }
     }
 }
-
-
